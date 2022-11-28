@@ -17,7 +17,6 @@ export const parseJsonFile = async (file) => {
 
 // Filter select
 export const handleFilter = (checked, title, i, value, data, setData) => {
-    console.log(value);
     switch (title) {
         case 'filterOrder':
             setData({
@@ -50,7 +49,6 @@ export const createOrderJson = (data) => {
         quantity: calculateTotalAndQuantity(data)[1],
         products: data,
     };
-    console.log(json);
     return JSON.stringify(json);
 }
 
