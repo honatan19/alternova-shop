@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @font-face {
+	font-family: "Monserrat";
+	src: url("./public/fonts/Montserrat/Montserrat.ttf");
+} */
+:root {
+	background-color: #fefefe;
+}
+
+.results {
+	@apply flex flex-col gap-4 h-screen;
+}
+
+.results__content {
+	@apply max-w-full flex flex-row flex-wrap place-content-center gap-4;
+}
+
+.results__content-not-results {
+	@apply flex flex-row items-center place-content-center;
+}
+
+.filters__input {
+	@apply py-1 px-5 border mr-2 rounded-md border-[#0f20411a] text-[14px];
+}
+
+.filters__input-search::placeholder {
+	@apply text-[#0f204199];
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	margin: 0;
+}
+
+.custom-number-input input:focus {
+	outline: none !important;
+}
+
+.custom-number-input button:focus {
+	outline: none !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
