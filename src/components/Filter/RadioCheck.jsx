@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react';
 
 const RadioCheck = ({ position, type, arrFilter, filterType, onHandleFilter, data, setData, title }) => {
     return (
@@ -10,33 +10,18 @@ const RadioCheck = ({ position, type, arrFilter, filterType, onHandleFilter, dat
                 {arrFilter.map((el, i) => {
                     return (
                         <div key={i}>
-                            {
-                                arrFilter[i]?.nameRadio
-                                    ? <label htmlFor={el.id} className='capitalize'>
-                                        <input
-                                            type={type}
-                                            value={(filterType == "filterType" ? el.id : i)}
-                                            name={(el.nameRadio) ? el.nameRadio : el.id}
-                                            id={el.id}
-                                            onChange={({ target: { checked, value } }) => onHandleFilter(checked, filterType, i, value, data, setData)}
-                                            defaultChecked={el.active} className='mr-2'
-                                        />
-                                        {el.name}
-                                    </label>
-                                    : <label htmlFor={el.id}>
-                                        <div>
-                                            <input
-                                                type={type}
-                                                value={i}
-                                                name={(el.nameRadio) ? el.nameRadio : el.id}
-                                                id={el.id}
-                                                onChange={({ target: { checked } }) => onHandleFilter(checked, filterType, i, data, setData)}
-                                                checked={el.active}
-                                                className='mr-2' />
-                                        </div>
-                                        <div>{el.name}</div>
-                                    </label>
-                            }
+                            <label htmlFor={el.id} className='capitalize flex flex-row items-center  mb-2'>
+                                <input
+                                    type={type}
+                                    value={(filterType == "filterType" ? el.id : i)}
+                                    name={(el.nameRadio) ? el.nameRadio : el.id}
+                                    id={el.id}
+                                    onChange={({ target: { checked, value } }) => onHandleFilter(checked, filterType, i, value, data, setData)}
+                                    defaultChecked={el.active}
+                                    className={(type == 'radio') ? 'radio radio-sm mr-2' : 'checkbox checkbox-sm mr-2'}
+                                />
+                                {el.name}
+                            </label>
                         </div>
                     )
                 })}

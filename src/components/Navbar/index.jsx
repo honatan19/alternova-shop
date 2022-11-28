@@ -1,5 +1,6 @@
 import { useMainContext } from '../../contexts/MainProvider';
-import { CartIcon, UploadIcon } from '../Icons';
+import Cart from '../Cart';
+import { UploadIcon } from '../Icons';
 import UploadProducts from '../UploadProducts';
 
 const Navbar = () => {
@@ -20,12 +21,7 @@ const Navbar = () => {
                 <a className="btn btn-ghost normal-case text-xl">Alternova Shop</a>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-ghost btn-circle">
-                    <div className="indicator">
-                        <CartIcon />
-                        <span className="badge badge-xs badge-primary indicator-item">{MainCtx.cart.length}</span>
-                    </div>
-                </button>
+                <Cart countCart={MainCtx.cart.length}/>
             </div>
         </nav>
     )

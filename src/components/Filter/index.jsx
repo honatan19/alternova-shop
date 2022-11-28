@@ -19,7 +19,7 @@ const Filter = ({ data, setData }) => {
         { name: 'Mayor a menor precio', active: false, id: "maxMin", nameRadio: "radio" },
     ];
 
-    Object.entries(originalData.products).map(([key, value]) => {
+    Object.entries(originalData.products).map(([, value]) => {
         if (!arrInitType.includes(value.type)) {
             arrInitType.push(value.type);
         }
@@ -33,7 +33,7 @@ const Filter = ({ data, setData }) => {
             nameRadio: "checkbox"
         });
     });
-    
+
     useEffect(() => {
         let dataFil = originalData.products.filter(fil => {
             let nameProduct = fil.name.toLowerCase();
@@ -51,7 +51,7 @@ const Filter = ({ data, setData }) => {
     }, [dataFilters.order, dataFilters.type, dataFilters.name])
 
     return (
-        <div className="container flex flex-row place-content-center p-3 filters">
+        <div className="container flex flex-row place-content-center p-3 filters results__content xs:flex-col !gap-1">
             <RadioCheck position={0} type="radio" arrFilter={filterOrder} onHandleFilter={handleFilter} filterType={'filterOrder'} data={dataFilters} setData={setDataFilters} title={'Ordenar por precio'} />
             <RadioCheck position={1} type="checkbox" arrFilter={filterType} onHandleFilter={handleFilter} filterType={'filterType'} data={dataFilters} setData={setDataFilters} title={'Categorias'} />
             <Search dataFilters={dataFilters} setDataFilters={setDataFilters} />

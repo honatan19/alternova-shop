@@ -43,6 +43,27 @@ input[type="number"]::-webkit-outer-spin-button {
 	outline: none !important;
 }
 
+.cart h3 {
+	font-weight: bold;
+}
+
+.counter {
+	@apply flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1;
+}
+
+.counter__button {
+	@apply bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 cursor-pointer;
+}
+
+.counter__button > span {
+	@apply m-auto text-2xl font-thin;
+}
+
+.counter__input {
+	@layer md:text-basecursor-default;
+	@apply outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold hover:text-black focus:text-black flex items-center text-gray-700;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

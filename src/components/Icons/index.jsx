@@ -29,3 +29,16 @@ export const UploadIcon = (props) => (
         <path d="M152.475 104.55c4.8 4.8 12.5 4.8 17.3 0l63-63v229.8c0 6.8 5.5 12.3 12.3 12.3 6.8 0 12.3-5.5 12.3-12.3V41.65l63 63c2.4 2.4 5.5 3.6 8.7 3.6s6.3-1.2 8.7-3.6c4.8-4.8 4.8-12.5 0-17.3l-83.9-83.9c-4.6-4.6-12.7-4.6-17.3 0l-83.9 83.9c-5 4.7-5 12.4-.2 17.2z" />
     </svg>
 )
+
+export const DeleteIcon = (props) => (
+    <svg
+        className="h-6 w-6"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        {...props}
+    >
+        <path d="M6 18 18 6M6 6l12 12" />
+    </svg>
+)

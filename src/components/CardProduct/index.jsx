@@ -1,7 +1,7 @@
-import React, { useReducer } from 'react'
+import { useReducer } from 'react';
 import { useMainContext } from "../../contexts/MainProvider";
-import Counter from "../Counter";
 import { counterReducer } from '../../reducers';
+import Counter from "../Counter";
 
 const CardProduct = ({ data, position }) => {
     const MainCtx = useMainContext();
@@ -13,10 +13,11 @@ const CardProduct = ({ data, position }) => {
         MainCtx.setCart([...MainCtx.cart, data]);
         e.target.classList.add('btn-disabled');
     }
+
     return (
         <div className="card card-compact bg-base-100 w-[300px] shadow-xl">
             <figure>
-                <img src="https://fakeimg.pl/300x187/cc051c/" width="300" height="187" className="rounded-t-box" />
+                <img src="https://fakeimg.pl/300x187/c4c4c4/" width="300" height="187" className="rounded-t-box" />
             </figure>
             <div className="card-body">
                 <div className="card-title flex items-center font-extrabold">{data.name}</div>
@@ -30,7 +31,7 @@ const CardProduct = ({ data, position }) => {
                         <Counter counterNumber={counterNumber} dispatch={dispatch} position={position} stock={data.stock} />
                     </div>
                     <div>
-                        <button onClick={addToCart} className="btn btn-primary text-xs">Añadir</button>
+                        <button onClick={addToCart} className="btn btn-success text-xs">Añadir</button>
                     </div>
                 </div>
             </div>

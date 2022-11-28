@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react';
 
 const Search = ({ dataFilters, setDataFilters }) => {
     const valueSearch = useRef();
@@ -10,7 +10,7 @@ const Search = ({ dataFilters, setDataFilters }) => {
     }
     return (
         <div>
-            <input className='filters__input filters__input-search' placeholder={'Buscar por nombre'} type="text" ref={valueSearch} onKeyUp={handleSearch}/>
+            <input className='filters__input filters__input-search' placeholder={'Buscar por nombre'} type="text" ref={valueSearch} onKeyUp={handleSearch} />
         </div>
     )
 }

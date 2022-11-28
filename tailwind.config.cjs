@@ -6,6 +6,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: { max: "450px" },
+        sm: { max: "723px" },
+        md: { min: "724px", max: "1023px" },
+        xm: { min: "1024px", max: "1279px" },
+        xxl: { min: "2048px" },
+      },
       container: {
         center: true,
         screens: {

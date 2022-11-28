@@ -42,3 +42,26 @@ export const handleFilter = (checked, title, i, value, data, setData) => {
             break;
     }
 }
+
+export const createOrderJson = (data) => {
+    const json = {
+        name: `Orden #${parseInt(Math.random() * (9999 - 1000) + 1000)}`,
+        total: calculateTotalAndQuantity(data)[0],
+        quantity: calculateTotalAndQuantity(data)[1],
+        products: data,
+    };
+    console.log(json);
+    return JSON.stringify(json);
+}
+
+const calculateTotalAndQuantity = (data) => {
+    if (data) {
+        let total = 0;
+        let quantityProducts = 0;
+        data.forEach(elm => {
+            total = total + (elm.unit_price * elm.quantity);
+            quantityProducts = quantityProducts + elm.quantity;
+        });
+        return [total, quantityProducts];
+    }
+}

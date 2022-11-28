@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useMainContext } from '../../contexts/MainProvider';
 import { parseJsonFile } from '../../utils';
+
 const UploadProducts = () => {
     const MainCtx = useMainContext();
     const handleChange = async (e) => {

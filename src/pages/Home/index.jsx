@@ -13,7 +13,7 @@ const Home = () => {
         :
         <>
           <div className='flex justify-center place-content-stretch place-items-center h-screen'>
-            <p>No hay productos cargados🫠🛒</p>
+            <p>No existen productos cargados 🫠🛒</p>
           </div>
         </>
       }
