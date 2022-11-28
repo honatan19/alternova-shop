@@ -1,7 +1,7 @@
 Install the dependencies and start the server.
 
 ```sh
-cd alternova=shop
+cd alternova-shop
 npm i
 npm run dev
 ```
