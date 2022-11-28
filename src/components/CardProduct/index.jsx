@@ -9,6 +9,7 @@ const CardProduct = ({ data, position }) => {
     const [counterNumber, dispatch] = useReducer(counterReducer, initialState);
     const addToCart = (e) => {
         data.quantity = counterNumber.count;
+        data.total = data.unit_price * counterNumber.count;
         data.position = position;
         MainCtx.setCart([...MainCtx.cart, data]);
         e.target.classList.add('btn-disabled');

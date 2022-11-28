@@ -25,7 +25,7 @@ const TableItem = ({ item, position }) => {
             </td>
             <td>{item.quantity}</td>
             <td>${item.unit_price.toLocaleString('es-CO')}</td>
-            <td>${(item.unit_price * item.quantity).toLocaleString('es-CO')}</td>
+            <td>${item.total.toLocaleString('es-CO')}</td>
             <th>
                 <button className="btn btn-sm btn-circle hover:bg-red-500 border-none" onClick={deleteProduct}>
                     <DeleteIcon />
